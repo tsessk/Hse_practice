@@ -38,7 +38,6 @@ def post_nme_news(title):
     bot.send_photo(channel_id, title.parent.parent.find('span').get('data-img-retina-url'), caption=post)
 
 
-c = 0
 key = open('API_KEY.txt').read()
 channel_id = '-1001461696042'
 bot = telebot.TeleBot(key)
@@ -151,8 +150,4 @@ while True:
                 post_nme_news(nme_article)
             if nme_title == nme_prev_title:
                 flag = True
-    print('+++\n')
-    c += 1
-    print(c)
     time.sleep(60)
-    print('---\n')
