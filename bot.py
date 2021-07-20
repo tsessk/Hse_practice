@@ -26,7 +26,7 @@ def post_review(title):
 
 def post_rs_news(title):
     if title.text.strip() != 'Latest News':
-        post = '#Rolling_Stone_News\n"' + title.text.strip()  + '"\n' + title.parent.find('p').text.strip()
+        post = '#Rolling_Stone_News\n"' + title.text.strip() + '"\n' + title.parent.find('p').text.strip()
         post += '\n' + title.parent.parent.get('href')
         bot.send_photo(channel_id, title.parent.parent.find('img').get('data-src'), caption=post)
 
